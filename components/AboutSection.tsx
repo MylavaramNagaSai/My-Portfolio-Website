@@ -15,8 +15,12 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
-};
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+} as const; // <--- Add this exactly here
 
 // The Biometric Decryption Image Component
 const BiometricProfile = () => {
