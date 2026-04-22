@@ -65,6 +65,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <head>
+        <meta name="google-site-verification" content="rhmFE8-odWeDRC2NnFR1lAX-QdFEbyDZy9rm3PeGF1U" />
         {/* If you get a Google Verification tag, paste it exactly below this line */}
         {/* <meta name="google-site-verification" content="YOUR_CODE_HERE" /> */}
       </head>
