@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Lock } from "lucide-react";
 
 const blogPosts = [
@@ -27,13 +27,18 @@ const containerVariants = {
 };
 
 // BUTTERY SMOOTH LOAD PHYSICS
-const itemVariants = {
-  hidden: { y: 40, opacity: 0, scale: 0.95 },
-  visible: { 
-    y: 0, 
-    opacity: 1, 
+const itemVariants: Variants = { // Add ': Variants' here
+  hidden: { y: 20, opacity: 0, scale: 0.95 },
+  visible: {
+    y: 0,
+    opacity: 1,
     scale: 1,
-    transition: { type: "spring", stiffness: 300, damping: 24, mass: 0.8 } 
+    transition: { 
+      type: "spring", 
+      stiffness: 100, 
+      damping: 20, 
+      mass: 0.5 
+    }
   }
 };
 
