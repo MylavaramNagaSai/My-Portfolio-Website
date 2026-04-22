@@ -14,24 +14,43 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mylavaram Naga Sai | Infrastructure & Security Engineer",
-  description: "Founder of CodeQuantum AI. Specialist in React.js architecture, Network Protocols, and Global Tunneling Solutions.",
-  // NOTE: Change this URL to your actual Vercel link once you deploy!
-  metadataBase: new URL("https://your-vercel-domain.vercel.app"), 
+  description: "Founder of CodeQuantum AI. Specialist in secure infrastructure architecture, network protocols, and Next.js engineering.",
+  metadataBase: new URL("https://mylavaramsai.me"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Mylavaram Naga Sai | Portfolio",
-    description: "Explore my deployments, infrastructure architecture, and CodeQuantum AI.",
-    url: "https://your-vercel-domain.vercel.app",
+    title: "Mylavaram Naga Sai | Infrastructure & Security Engineer",
+    description: "Explore my infrastructure projects, security research, and the CodeQuantum AI benchmarking suite.",
+    url: "https://mylavaramsai.me",
     siteName: "Mylavaram Naga Sai Portfolio",
     images: [
       {
-        url: "/opengraph-image.png", // This points to the image you will drop in the app folder
+        url: "/opengraph-image.png", 
         width: 1200,
         height: 630,
-        alt: "Mylavaram Naga Sai Preview",
+        alt: "Mylavaram Naga Sai Portfolio Preview",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mylavaram Naga Sai | Portfolio",
+    description: "Infrastructure & Security Engineer | Founder of CodeQuantum AI",
+    images: ["/opengraph-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -43,9 +62,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        {/* If you get a Google Verification tag, paste it exactly below this line */}
+        {/* <meta name="google-site-verification" content="YOUR_CODE_HERE" /> */}
+      </head>
+      <body className="min-h-full flex flex-col bg-black text-white selection:bg-[var(--matrix-color)] selection:text-black">
+        {children}
+      </body>
     </html>
   );
 }
