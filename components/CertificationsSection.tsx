@@ -93,7 +93,7 @@ const itemVariants = {
     scale: 1,
     transition: { type: "spring", stiffness: 300, damping: 24, mass: 0.8 } 
   }
-};
+}as const;
 
 export default function CertificationsSection() {
   return (
