@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --matrix-green: #00ff41;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* THE INFINITE 5-COLOR GRADIENT ANIMATION */
+@keyframes liquid-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-premium-aurora {
+  /* This blends your 5 requested colors smoothly */
+  background: linear-gradient(
+    -45deg, 
+    #4c1d95, /* Deep Purple */
+    #1d4ed8, /* Rich Blue */
+    #5b21b6, /* Vivid Violet */
+    #374151, /* Slate Grey */
+    #451a03  /* Deep Bronze/Brown */
+  );
+  /* Make the background massive so it can pan across the screen */
+  background-size: 400% 400%;
+  /* Animate it continuously over 20 seconds */
+  animation: liquid-pan 20s ease-in-out infinite;
+}
+
+/* CINEMATIC GRAIN (Keeps it looking expensive and textured) */
+.noise-overlay {
+  position: fixed;
+  inset: -200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 5;
+  animation: noise-move 0.2s steps(2) infinite;
+}
+
+@keyframes noise-move {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(1%,1%); }
+}
+
+/* PREMIUM GLASS RENDERING */
+.backdrop-blur-3xl {
+  backdrop-filter: blur(80px) saturate(150%) brightness(0.8);
+  -webkit-backdrop-filter: blur(80px) saturate(150%) brightness(0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
